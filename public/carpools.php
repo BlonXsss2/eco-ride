@@ -204,6 +204,13 @@ $filters = $hasSearch ? ($searchParams['filters'] ?? []) : [];
                                                 </div>
                                             </div>
                                         <?php endif; ?>
+                                        <?php if (empty($nearest)): ?>
+                                            <div class="alert alert-info mt-4 mb-0 text-start">
+                                                <strong>Astuce :</strong> si la base de donnees n'est pas encore seedee, importez
+                                                <code>database/seeds.sql</code> puis <code>database/carpools_inserts.sql</code> (210 trajets),
+                                                et relancez votre recherche.
+                                            </div>
+                                        <?php endif; ?>
                                         <a href="carpools.php" class="btn btn-eco-primary mt-4">Nouvelle recherche</a>
                                     </div>
                                 </div>
