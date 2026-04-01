@@ -1,0 +1,37 @@
+/vendor/
+/node_modules/
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+/logs/
+
+# PHP
+php.ini
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.bat
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Deploiement
+Procfile
+
+# Runtime data (keep folder via data/.gitkeep)
+/data/*.json
