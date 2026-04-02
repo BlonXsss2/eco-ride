@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <title>Wireframe Desktop - Resultats de recherche</title>
+  <rect width="1200" height="900" fill="#f8f8f8"/>
+  <text x="600" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#333" font-weight="bold">WIREFRAME DESKTOP — Resultats de recherche</text>
+
+  <!-- NAVBAR -->
+  <rect x="0" y="45" width="1200" height="60" fill="#ddd" stroke="#bbb"/>
+  <text x="40" y="82" font-family="Arial" font-size="18" fill="#333" font-weight="bold">EcoRide</text>
+  <text x="700" y="80" font-family="Arial" font-size="13" fill="#555">Accueil</text>
+  <text x="800" y="80" font-family="Arial" font-size="13" fill="#555" font-weight="bold">Covoiturages</text>
+  <text x="930" y="80" font-family="Arial" font-size="13" fill="#555">Contact</text>
+  <text x="1030" y="80" font-family="Arial" font-size="13" fill="#555">Connexion</text>
+
+  <!-- SIDEBAR FILTERS -->
+  <rect x="40" y="130" width="260" height="450" rx="12" fill="#fff" stroke="#ddd"/>
+  <rect x="40" y="130" width="260" height="45" rx="12" fill="#2E7D32"/>
+  <text x="120" y="158" font-family="Arial" font-size="15" fill="#fff" font-weight="bold">Filtres</text>
+  <text x="60" y="205" font-family="Arial" font-size="12" fill="#555">☐ Ecologique uniquement</text>
+  <text x="60" y="245" font-family="Arial" font-size="12" fill="#555">Prix max (€)</text>
+  <rect x="60" y="255" width="220" height="32" rx="6" fill="#f5f5f5" stroke="#ccc"/>
+  <text x="75" y="276" font-family="Arial" font-size="11" fill="#999">Sans limite</text>
+  <text x="60" y="310" font-family="Arial" font-size="12" fill="#555">Note min. conducteur</text>
+  <rect x="60" y="320" width="220" height="32" rx="6" fill="#f5f5f5" stroke="#ccc"/>
+  <text x="75" y="341" font-family="Arial" font-size="11" fill="#999">Toutes les notes</text>
+  <rect x="60" y="375" width="220" height="36" rx="18" fill="#2E7D32"/>
+  <text x="130" y="398" font-family="Arial" font-size="13" fill="#fff">Appliquer</text>
+  <rect x="60" y="420" width="220" height="36" rx="18" fill="#fff" stroke="#999"/>
+  <text x="120" y="443" font-family="Arial" font-size="13" fill="#555">Reinitialiser</text>
+
+  <!-- SEARCH RESULTS HEADER -->
+  <text x="330" y="155" font-family="Arial" font-size="18" fill="#333" font-weight="bold">Resultats de recherche</text>
+  <text x="330" y="175" font-family="Arial" font-size="13" fill="#777">Paris → Lyon · 25/02/2026</text>
+  <text x="1020" y="155" font-family="Arial" font-size="13" fill="#2E7D32">Nouvelle recherche</text>
+  <text x="330" y="200" font-family="Arial" font-size="12" fill="#555">3 covoiturages trouves</text>
+
+  <!-- Result Card 1 -->
+  <rect x="330" y="220" width="260" height="200" rx="12" fill="#fff" stroke="#ddd"/>
+  <rect x="330" y="220" width="260" height="40" rx="12" fill="#c8e6c9"/>
+  <text x="345" y="245" font-family="Arial" font-size="12" fill="#1B5E20">Alice · Electric · ★ 5.0</text>
+  <text x="560" y="245" font-family="Arial" font-size="10" fill="#2E7D32">Eco</text>
+  <text x="345" y="285" font-family="Arial" font-size="14" fill="#2E7D32" font-weight="bold">Paris → Lyon</text>
+  <text x="345" y="310" font-family="Arial" font-size="11" fill="#777">26/02 · 08:30 · 3 places</text>
+  <text x="345" y="335" font-family="Arial" font-size="11" fill="#999">Tesla Model 3</text>
+  <text x="345" y="395" font-family="Arial" font-size="16" fill="#2E7D32" font-weight="bold">24.00 € / place</text>
+  <rect x="500" y="380" width="75" height="28" rx="14" fill="#2E7D32"/>
+  <text x="515" y="399" font-family="Arial" font-size="11" fill="#fff">Details</text>
+
+  <!-- Result Card 2 -->
+  <rect x="610" y="220" width="260" height="200" rx="12" fill="#fff" stroke="#ddd"/>
+  <rect x="610" y="220" width="260" height="40" rx="12" fill="#c8e6c9"/>
+  <text x="625" y="245" font-family="Arial" font-size="12" fill="#1B5E20">Lucas · Hybrid · ★ 4.0</text>
+  <text x="840" y="245" font-family="Arial" font-size="10" fill="#2E7D32">Eco</text>
+  <text x="625" y="285" font-family="Arial" font-size="14" fill="#2E7D32" font-weight="bold">Paris → Lyon</text>
+  <text x="625" y="310" font-family="Arial" font-size="11" fill="#777">27/02 · 14:00 · 4 places</text>
+  <text x="625" y="335" font-family="Arial" font-size="11" fill="#999">Toyota Prius</text>
+  <text x="625" y="395" font-family="Arial" font-size="16" fill="#2E7D32" font-weight="bold">24.00 € / place</text>
+  <rect x="780" y="380" width="75" height="28" rx="14" fill="#2E7D32"/>
+  <text x="795" y="399" font-family="Arial" font-size="11" fill="#fff">Details</text>
+
+  <!-- Result Card 3 -->
+  <rect x="890" y="220" width="260" height="200" rx="12" fill="#fff" stroke="#ddd"/>
+  <rect x="890" y="220" width="260" height="40" rx="12" fill="#c8e6c9"/>
+  <text x="905" y="245" font-family="Arial" font-size="12" fill="#1B5E20">Alice · Petrol</text>
+  <text x="905" y="285" font-family="Arial" font-size="14" fill="#2E7D32" font-weight="bold">Lyon → Paris</text>
+  <text x="905" y="310" font-family="Arial" font-size="11" fill="#777">01/03 · 14:00 · 4 places</text>
+  <text x="905" y="335" font-family="Arial" font-size="11" fill="#999">Renault Clio</text>
+  <text x="905" y="395" font-family="Arial" font-size="16" fill="#2E7D32" font-weight="bold">24.00 € / place</text>
+  <rect x="1060" y="380" width="75" height="28" rx="14" fill="#2E7D32"/>
+  <text x="1075" y="399" font-family="Arial" font-size="11" fill="#fff">Details</text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="820" width="1200" height="80" fill="#1a3a1a"/>
+  <text x="50" y="855" font-family="Arial" font-size="14" fill="#8BC34A" font-weight="bold">EcoRide</text>
+  <text x="400" y="855" font-family="Arial" font-size="11" fill="#aaa">Accueil | Covoiturages | Contact | Mentions legales</text>
+  <text x="950" y="855" font-family="Arial" font-size="11" fill="#777">© 2026 EcoRide</text>
+</svg>

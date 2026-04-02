@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812" fill="none">
+  <title>Mockup Mobile - Resultats de recherche EcoRide</title>
+  <defs>
+    <linearGradient id="nG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E7D32"/><stop offset="100%" stop-color="#1B5E20"/></linearGradient>
+    <linearGradient id="bG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E7D32"/><stop offset="100%" stop-color="#4CAF50"/></linearGradient>
+  </defs>
+  <rect width="375" height="812" fill="#F1F8E9"/>
+  <text x="187" y="16" text-anchor="middle" font-family="Montserrat, Arial" font-size="8" fill="#2E7D32" font-weight="bold">MOCKUP MOBILE (375px) — Resultats</text>
+
+  <!-- Status bar -->
+  <rect x="0" y="22" width="375" height="20" fill="#1B5E20"/>
+  <text x="187" y="36" text-anchor="middle" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.8)">9:41</text>
+
+  <!-- NAVBAR -->
+  <rect x="0" y="42" width="375" height="50" fill="url(#nG)"/>
+  <text x="15" y="73" font-family="Montserrat, Arial" font-size="16" fill="#fff" font-weight="bold">🚗 EcoRide</text>
+  <rect x="330" y="56" width="28" height="3" rx="1" fill="rgba(255,255,255,0.8)"/>
+  <rect x="330" y="63" width="28" height="3" rx="1" fill="rgba(255,255,255,0.8)"/>
+  <rect x="330" y="70" width="28" height="3" rx="1" fill="rgba(255,255,255,0.8)"/>
+
+  <!-- Header -->
+  <text x="15" y="120" font-family="Montserrat, Arial" font-size="18" fill="#1B5E20" font-weight="bold">Resultats</text>
+  <text x="15" y="140" font-family="Open Sans, Arial" font-size="11" fill="#757575">Paris → Lyon · 25/02/2026</text>
+  <rect x="280" y="108" width="80" height="26" rx="13" fill="none" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="293" y="126" font-family="Open Sans, Arial" font-size="10" fill="#2E7D32">Filtres ▼</text>
+  <text x="15" y="165" font-family="Open Sans, Arial" font-size="11" fill="#555">3 covoiturages trouves</text>
+
+  <!-- Card 1 -->
+  <rect x="15" y="180" width="345" height="145" rx="16" fill="#fff" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <rect x="15" y="180" width="345" height="32" rx="16" fill="url(#bG)"/>
+  <text x="28" y="201" font-family="Open Sans, Arial" font-size="11" fill="#fff" font-weight="bold">Alice · Electric · ★5.0</text>
+  <rect x="310" y="186" width="38" height="18" rx="9" fill="rgba(255,255,255,0.2)"/>
+  <text x="316" y="200" font-family="Open Sans, Arial" font-size="8" fill="#fff">Eco</text>
+  <text x="28" y="235" font-family="Montserrat, Arial" font-size="15" fill="#2E7D32" font-weight="bold">Paris → Lyon</text>
+  <text x="28" y="255" font-family="Open Sans, Arial" font-size="10" fill="#757575">26/02 · 08:30 · 3 places</text>
+  <text x="28" y="275" font-family="Open Sans, Arial" font-size="10" fill="#aaa">Tesla Model 3</text>
+  <text x="28" y="310" font-family="Montserrat, Arial" font-size="16" fill="#2E7D32" font-weight="bold">24.00 €/place</text>
+  <rect x="270" y="296" width="76" height="26" rx="13" fill="url(#bG)"/>
+  <text x="288" y="314" font-family="Open Sans, Arial" font-size="10" fill="#fff" font-weight="bold">Details</text>
+
+  <!-- Card 2 -->
+  <rect x="15" y="340" width="345" height="145" rx="16" fill="#fff" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <rect x="15" y="340" width="345" height="32" rx="16" fill="url(#bG)"/>
+  <text x="28" y="361" font-family="Open Sans, Arial" font-size="11" fill="#fff" font-weight="bold">Lucas · Hybrid · ★4.0</text>
+  <rect x="310" y="346" width="38" height="18" rx="9" fill="rgba(255,255,255,0.2)"/>
+  <text x="316" y="360" font-family="Open Sans, Arial" font-size="8" fill="#fff">Eco</text>
+  <text x="28" y="395" font-family="Montserrat, Arial" font-size="15" fill="#2E7D32" font-weight="bold">Paris → Lyon</text>
+  <text x="28" y="415" font-family="Open Sans, Arial" font-size="10" fill="#757575">27/02 · 14:00 · 4 places</text>
+  <text x="28" y="435" font-family="Open Sans, Arial" font-size="10" fill="#aaa">Toyota Prius</text>
+  <text x="28" y="470" font-family="Montserrat, Arial" font-size="16" fill="#2E7D32" font-weight="bold">24.00 €/place</text>
+  <rect x="270" y="456" width="76" height="26" rx="13" fill="url(#bG)"/>
+  <text x="288" y="474" font-family="Open Sans, Arial" font-size="10" fill="#fff" font-weight="bold">Details</text>
+
+  <!-- Card 3 -->
+  <rect x="15" y="500" width="345" height="145" rx="16" fill="#fff" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <rect x="15" y="500" width="345" height="32" rx="16" fill="url(#bG)"/>
+  <text x="28" y="521" font-family="Open Sans, Arial" font-size="11" fill="#fff" font-weight="bold">Alice · Petrol</text>
+  <text x="28" y="555" font-family="Montserrat, Arial" font-size="15" fill="#2E7D32" font-weight="bold">Lyon → Paris</text>
+  <text x="28" y="575" font-family="Open Sans, Arial" font-size="10" fill="#757575">01/03 · 14:00 · 4 places</text>
+  <text x="28" y="595" font-family="Open Sans, Arial" font-size="10" fill="#aaa">Renault Clio</text>
+  <text x="28" y="630" font-family="Montserrat, Arial" font-size="16" fill="#2E7D32" font-weight="bold">24.00 €/place</text>
+  <rect x="270" y="616" width="76" height="26" rx="13" fill="url(#bG)"/>
+  <text x="288" y="634" font-family="Open Sans, Arial" font-size="10" fill="#fff" font-weight="bold">Details</text>
+
+  <!-- New Search button -->
+  <rect x="15" y="665" width="345" height="35" rx="17" fill="none" stroke="#2E7D32" stroke-width="2"/>
+  <text x="187" y="688" text-anchor="middle" font-family="Open Sans, Arial" font-size="12" fill="#2E7D32" font-weight="bold">Nouvelle recherche</text>
+
+  <!-- Footer -->
+  <rect x="0" y="720" width="375" height="60" fill="#0d1f12"/>
+  <text x="15" y="752" font-family="Montserrat, Arial" font-size="12" fill="#8BC34A" font-weight="bold">🚗 EcoRide</text>
+  <text x="187" y="770" text-anchor="middle" font-family="Open Sans, Arial" font-size="9" fill="rgba(255,255,255,0.4)">© 2026 EcoRide</text>
+</svg>

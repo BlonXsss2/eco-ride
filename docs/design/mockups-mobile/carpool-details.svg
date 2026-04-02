@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 900" fill="none">
+  <title>Mockup Mobile - Details du covoiturage EcoRide</title>
+  <defs>
+    <linearGradient id="nG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E7D32"/><stop offset="100%" stop-color="#1B5E20"/></linearGradient>
+    <linearGradient id="bG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E7D32"/><stop offset="100%" stop-color="#4CAF50"/></linearGradient>
+  </defs>
+  <rect width="375" height="900" fill="#F1F8E9"/>
+  <text x="187" y="16" text-anchor="middle" font-family="Montserrat, Arial" font-size="8" fill="#2E7D32" font-weight="bold">MOCKUP MOBILE (375px) — Details</text>
+
+  <!-- Status bar -->
+  <rect x="0" y="22" width="375" height="20" fill="#1B5E20"/>
+  <text x="187" y="36" text-anchor="middle" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.8)">9:41</text>
+
+  <!-- NAVBAR -->
+  <rect x="0" y="42" width="375" height="50" fill="url(#nG)"/>
+  <text x="15" y="73" font-family="Montserrat, Arial" font-size="16" fill="#fff" font-weight="bold">🚗 EcoRide</text>
+  <rect x="330" y="56" width="28" height="3" rx="1" fill="rgba(255,255,255,0.8)"/>
+  <rect x="330" y="63" width="28" height="3" rx="1" fill="rgba(255,255,255,0.8)"/>
+  <rect x="330" y="70" width="28" height="3" rx="1" fill="rgba(255,255,255,0.8)"/>
+
+  <!-- Back -->
+  <rect x="15" y="105" width="85" height="26" rx="5" fill="#fff" stroke="#ccc"/>
+  <text x="28" y="122" font-family="Open Sans, Arial" font-size="10" fill="#555">← Retour</text>
+
+  <!-- Trip Info -->
+  <rect x="15" y="145" width="345" height="155" rx="16" fill="#fff" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.08))"/>
+  <rect x="15" y="145" width="345" height="38" rx="16" fill="url(#bG)"/>
+  <text x="28" y="169" font-family="Montserrat, Arial" font-size="14" fill="#fff" font-weight="bold">Paris → Lyon</text>
+  <rect x="305" y="152" width="42" height="20" rx="10" fill="rgba(255,255,255,0.2)"/>
+  <text x="312" y="167" font-family="Open Sans, Arial" font-size="9" fill="#fff">Eco ★</text>
+  <text x="28" y="208" font-family="Open Sans, Arial" font-size="11" fill="#1B5E20" font-weight="bold">Date</text>
+  <text x="130" y="208" font-family="Open Sans, Arial" font-size="11" fill="#333">26/02/2026</text>
+  <text x="28" y="228" font-family="Open Sans, Arial" font-size="11" fill="#1B5E20" font-weight="bold">Heure</text>
+  <text x="130" y="228" font-family="Open Sans, Arial" font-size="11" fill="#333">08:30</text>
+  <text x="28" y="248" font-family="Open Sans, Arial" font-size="11" fill="#1B5E20" font-weight="bold">Prix</text>
+  <text x="130" y="248" font-family="Open Sans, Arial" font-size="11" fill="#2E7D32" font-weight="bold">24.00 €</text>
+  <text x="28" y="268" font-family="Open Sans, Arial" font-size="11" fill="#1B5E20" font-weight="bold">Places</text>
+  <text x="130" y="268" font-family="Open Sans, Arial" font-size="11" fill="#333">3 / 4</text>
+
+  <!-- Vehicle -->
+  <rect x="15" y="315" width="345" height="90" rx="16" fill="#fff" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.08))"/>
+  <rect x="15" y="315" width="345" height="35" rx="16" fill="url(#bG)"/>
+  <text x="28" y="337" font-family="Montserrat, Arial" font-size="13" fill="#fff" font-weight="bold">Vehicule</text>
+  <text x="28" y="370" font-family="Open Sans, Arial" font-size="11" fill="#333">Tesla Model 3 · Electric</text>
+  <text x="28" y="390" font-family="Open Sans, Arial" font-size="11" fill="#757575">White · AB-123-CD</text>
+
+  <!-- Driver -->
+  <rect x="15" y="420" width="345" height="150" rx="16" fill="#fff" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.08))"/>
+  <rect x="15" y="420" width="345" height="35" rx="16" fill="url(#bG)"/>
+  <text x="28" y="442" font-family="Montserrat, Arial" font-size="13" fill="#fff" font-weight="bold">Conducteur</text>
+  <circle cx="187" cy="490" r="22" fill="#2E7D32"/>
+  <text x="182" y="497" font-family="Montserrat, Arial" font-size="16" fill="#fff" font-weight="bold">A</text>
+  <text x="187" y="525" text-anchor="middle" font-family="Montserrat, Arial" font-size="13" fill="#1B5E20" font-weight="bold">Alice</text>
+  <text x="187" y="542" text-anchor="middle" font-family="Arial" font-size="12" fill="#f9a825">★★★★★ (5.0)</text>
+  <rect x="55" y="552" width="110" height="20" rx="10" fill="#ffebee"/>
+  <text x="68" y="567" font-family="Open Sans, Arial" font-size="9" fill="#c62828">✗ Non fumeur</text>
+  <rect x="175" y="552" width="130" height="20" rx="10" fill="#e8f5e9"/>
+  <text x="188" y="567" font-family="Open Sans, Arial" font-size="9" fill="#2e7d32">✓ Animaux acceptes</text>
+
+  <!-- Booking -->
+  <rect x="15" y="585" width="345" height="110" rx="16" fill="#f8f9fa" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <text x="187" y="618" text-anchor="middle" font-family="Montserrat, Arial" font-size="24" fill="#2E7D32" font-weight="bold">24.00 €</text>
+  <text x="187" y="638" text-anchor="middle" font-family="Open Sans, Arial" font-size="10" fill="#757575">/ place · Credits: 20.00 €</text>
+  <rect x="40" y="652" width="295" height="32" rx="16" fill="url(#bG)" filter="drop-shadow(0 4px 15px rgba(46,125,50,0.3))"/>
+  <text x="187" y="673" text-anchor="middle" font-family="Open Sans, Arial" font-size="12" fill="#fff" font-weight="bold">Participer</text>
+
+  <!-- Reviews -->
+  <rect x="15" y="710" width="345" height="100" rx="16" fill="#fff" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.08))"/>
+  <rect x="15" y="710" width="345" height="32" rx="16" fill="url(#bG)"/>
+  <text x="28" y="731" font-family="Montserrat, Arial" font-size="12" fill="#fff" font-weight="bold">Avis</text>
+  <text x="28" y="765" font-family="Arial" font-size="12" fill="#f9a825">★★★★★</text>
+  <text x="100" y="765" font-family="Open Sans, Arial" font-size="11" fill="#333" font-weight="bold">Emma</text>
+  <text x="28" y="785" font-family="Open Sans, Arial" font-size="9" fill="#555">Excellent trajet ! Tres confortable et ecologique.</text>
+  <text x="28" y="800" font-family="Open Sans, Arial" font-size="9" fill="#999">Nice → Marseille · 18/02/2026</text>
+
+  <!-- Footer -->
+  <rect x="0" y="860" width="375" height="40" fill="#0d1f12"/>
+  <text x="187" y="885" text-anchor="middle" font-family="Open Sans, Arial" font-size="9" fill="rgba(255,255,255,0.4)">© 2026 EcoRide</text>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <title>Wireframe Desktop - Details du covoiturage</title>
+  <rect width="1200" height="900" fill="#f8f8f8"/>
+  <text x="600" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#333" font-weight="bold">WIREFRAME DESKTOP — Details du covoiturage</text>
+
+  <!-- NAVBAR -->
+  <rect x="0" y="45" width="1200" height="60" fill="#ddd" stroke="#bbb"/>
+  <text x="40" y="82" font-family="Arial" font-size="18" fill="#333" font-weight="bold">EcoRide</text>
+  <text x="700" y="80" font-family="Arial" font-size="13" fill="#555">Accueil</text>
+  <text x="800" y="80" font-family="Arial" font-size="13" fill="#555">Covoiturages</text>
+  <text x="930" y="80" font-family="Arial" font-size="13" fill="#555">Contact</text>
+  <text x="1030" y="80" font-family="Arial" font-size="13" fill="#555">Mon Profil</text>
+
+  <!-- Back button -->
+  <rect x="50" y="130" width="120" height="32" rx="6" fill="#fff" stroke="#999"/>
+  <text x="72" y="151" font-family="Arial" font-size="12" fill="#555">← Retour</text>
+
+  <!-- LEFT COLUMN: Trip Info -->
+  <rect x="50" y="180" width="720" height="200" rx="12" fill="#fff" stroke="#ddd"/>
+  <rect x="50" y="180" width="720" height="45" rx="12" fill="#2E7D32"/>
+  <text x="70" y="210" font-family="Arial" font-size="16" fill="#fff" font-weight="bold">Paris → Lyon</text>
+  <text x="720" y="210" font-family="Arial" font-size="12" fill="#fff" opacity="0.8">Eco ★</text>
+  <text x="70" y="255" font-family="Arial" font-size="13" fill="#333"><tspan font-weight="bold">Date</tspan>          26/02/2026</text>
+  <text x="70" y="280" font-family="Arial" font-size="13" fill="#333"><tspan font-weight="bold">Heure</tspan>         08:30</text>
+  <text x="70" y="305" font-family="Arial" font-size="13" fill="#333"><tspan font-weight="bold">Prix</tspan>          24.00 €</text>
+  <text x="70" y="330" font-family="Arial" font-size="13" fill="#333"><tspan font-weight="bold">Places</tspan>        3 / 4</text>
+
+  <!-- Vehicle Card -->
+  <rect x="50" y="400" width="720" height="140" rx="12" fill="#fff" stroke="#ddd"/>
+  <rect x="50" y="400" width="720" height="45" rx="12" fill="#2E7D32"/>
+  <text x="70" y="430" font-family="Arial" font-size="16" fill="#fff" font-weight="bold">Vehicule</text>
+  <text x="720" y="430" font-family="Arial" font-size="12" fill="#fff">Electric</text>
+  <text x="70" y="475" font-family="Arial" font-size="13" fill="#333"><tspan font-weight="bold">Marque / Modele</tspan>   Tesla Model 3</text>
+  <text x="70" y="500" font-family="Arial" font-size="13" fill="#333"><tspan font-weight="bold">Couleur</tspan>           White</text>
+  <text x="70" y="525" font-family="Arial" font-size="13" fill="#333"><tspan font-weight="bold">Immatriculation</tspan>   AB-123-CD</text>
+
+  <!-- Reviews -->
+  <rect x="50" y="560" width="720" height="180" rx="12" fill="#fff" stroke="#ddd"/>
+  <rect x="50" y="560" width="720" height="45" rx="12" fill="#2E7D32"/>
+  <text x="70" y="590" font-family="Arial" font-size="16" fill="#fff" font-weight="bold">Avis sur le conducteur</text>
+  <text x="70" y="635" font-family="Arial" font-size="28" fill="#2E7D32" font-weight="bold">5.0</text>
+  <text x="130" y="635" font-family="Arial" font-size="16" fill="#f9a825">★★★★★</text>
+  <text x="220" y="635" font-family="Arial" font-size="12" fill="#777">1 avis valide</text>
+  <rect x="70" y="655" width="680" height="70" rx="8" fill="#f5f5f5"/>
+  <text x="85" y="680" font-family="Arial" font-size="12" fill="#f9a825">★★★★★</text>
+  <text x="170" y="680" font-family="Arial" font-size="12" fill="#333" font-weight="bold">Emma</text>
+  <text x="600" y="680" font-family="Arial" font-size="11" fill="#999">18/02/2026</text>
+  <text x="85" y="705" font-family="Arial" font-size="11" fill="#555">Excellent trajet ! Tres confortable et ecologique.</text>
+
+  <!-- RIGHT COLUMN: Driver + Booking -->
+  <rect x="800" y="180" width="350" height="250" rx="12" fill="#fff" stroke="#ddd"/>
+  <rect x="800" y="180" width="350" height="45" rx="12" fill="#2E7D32"/>
+  <text x="920" y="210" font-family="Arial" font-size="16" fill="#fff" font-weight="bold">Conducteur</text>
+  <circle cx="975" cy="270" r="35" fill="#2E7D32"/>
+  <text x="968" y="278" font-family="Arial" font-size="22" fill="#fff" font-weight="bold">A</text>
+  <text x="975" y="320" text-anchor="middle" font-family="Arial" font-size="15" fill="#333" font-weight="bold">Alice</text>
+  <text x="975" y="340" text-anchor="middle" font-family="Arial" font-size="13" fill="#f9a825">★★★★★ (5.0)</text>
+  <line x1="820" y1="360" x2="1130" y2="360" stroke="#eee"/>
+  <text x="975" y="382" text-anchor="middle" font-family="Arial" font-size="12" fill="#333" font-weight="bold">Preferences</text>
+  <rect x="845" y="393" width="120" height="24" rx="12" fill="#ffebee"/>
+  <text x="860" y="410" font-family="Arial" font-size="10" fill="#c62828">✗ Non fumeur</text>
+  <rect x="975" y="393" width="130" height="24" rx="12" fill="#e8f5e9"/>
+  <text x="990" y="410" font-family="Arial" font-size="10" fill="#2e7d32">✓ Animaux acceptes</text>
+
+  <!-- Booking Section -->
+  <rect x="800" y="450" width="350" height="150" rx="12" fill="#f5f5f5" stroke="#ddd"/>
+  <text x="975" y="490" text-anchor="middle" font-family="Arial" font-size="24" fill="#2E7D32" font-weight="bold">24.00 €</text>
+  <text x="975" y="510" text-anchor="middle" font-family="Arial" font-size="12" fill="#777">/ place</text>
+  <text x="975" y="540" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Vos credits : 20.00 € | Cout : 1 credit</text>
+  <rect x="845" y="555" width="260" height="36" rx="18" fill="#2E7D32"/>
+  <text x="975" y="578" text-anchor="middle" font-family="Arial" font-size="14" fill="#fff">Participer</text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="820" width="1200" height="80" fill="#1a3a1a"/>
+  <text x="50" y="855" font-family="Arial" font-size="14" fill="#8BC34A" font-weight="bold">EcoRide</text>
+  <text x="950" y="855" font-family="Arial" font-size="11" fill="#777">© 2026 EcoRide</text>
+</svg>

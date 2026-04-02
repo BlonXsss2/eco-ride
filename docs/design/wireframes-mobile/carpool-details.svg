@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 900" fill="none">
+  <title>Wireframe Mobile - Details du covoiturage</title>
+  <rect width="375" height="900" fill="#f8f8f8"/>
+  <text x="187" y="20" text-anchor="middle" font-family="Arial" font-size="10" fill="#333" font-weight="bold">WIREFRAME MOBILE (375px) — Details</text>
+
+  <!-- Status bar -->
+  <rect x="0" y="28" width="375" height="20" fill="#eee"/>
+  <text x="187" y="42" text-anchor="middle" font-family="Arial" font-size="9" fill="#999">9:41</text>
+
+  <!-- NAVBAR -->
+  <rect x="0" y="48" width="375" height="50" fill="#ddd" stroke="#bbb"/>
+  <text x="20" y="78" font-family="Arial" font-size="16" fill="#333" font-weight="bold">EcoRide</text>
+  <rect x="330" y="62" width="30" height="3" fill="#555"/>
+  <rect x="330" y="69" width="30" height="3" fill="#555"/>
+  <rect x="330" y="76" width="30" height="3" fill="#555"/>
+
+  <!-- Back -->
+  <rect x="15" y="110" width="90" height="26" rx="5" fill="#fff" stroke="#999"/>
+  <text x="30" y="128" font-family="Arial" font-size="10" fill="#555">← Retour</text>
+
+  <!-- Trip Info Card -->
+  <rect x="15" y="150" width="345" height="150" rx="10" fill="#fff" stroke="#ddd"/>
+  <rect x="15" y="150" width="345" height="35" rx="10" fill="#2E7D32"/>
+  <text x="28" y="173" font-family="Arial" font-size="14" fill="#fff" font-weight="bold">Paris → Lyon</text>
+  <text x="320" y="173" font-family="Arial" font-size="9" fill="#fff">Eco ★</text>
+  <text x="28" y="210" font-family="Arial" font-size="11" fill="#333"><tspan font-weight="bold">Date</tspan>    26/02/2026</text>
+  <text x="28" y="230" font-family="Arial" font-size="11" fill="#333"><tspan font-weight="bold">Heure</tspan>   08:30</text>
+  <text x="28" y="250" font-family="Arial" font-size="11" fill="#333"><tspan font-weight="bold">Prix</tspan>    24.00 €</text>
+  <text x="28" y="270" font-family="Arial" font-size="11" fill="#333"><tspan font-weight="bold">Places</tspan>  3 / 4</text>
+
+  <!-- Vehicle Card -->
+  <rect x="15" y="315" width="345" height="110" rx="10" fill="#fff" stroke="#ddd"/>
+  <rect x="15" y="315" width="345" height="35" rx="10" fill="#2E7D32"/>
+  <text x="28" y="338" font-family="Arial" font-size="14" fill="#fff" font-weight="bold">Vehicule</text>
+  <text x="28" y="372" font-family="Arial" font-size="11" fill="#333">Tesla Model 3 · Electric</text>
+  <text x="28" y="392" font-family="Arial" font-size="11" fill="#333">Couleur: White</text>
+  <text x="28" y="412" font-family="Arial" font-size="11" fill="#333">Plaque: AB-123-CD</text>
+
+  <!-- Driver Card -->
+  <rect x="15" y="440" width="345" height="160" rx="10" fill="#fff" stroke="#ddd"/>
+  <rect x="15" y="440" width="345" height="35" rx="10" fill="#2E7D32"/>
+  <text x="28" y="463" font-family="Arial" font-size="14" fill="#fff" font-weight="bold">Conducteur</text>
+  <circle cx="187" cy="510" r="25" fill="#2E7D32"/>
+  <text x="182" y="517" font-family="Arial" font-size="16" fill="#fff" font-weight="bold">A</text>
+  <text x="187" y="548" text-anchor="middle" font-family="Arial" font-size="13" fill="#333" font-weight="bold">Alice</text>
+  <text x="187" y="566" text-anchor="middle" font-family="Arial" font-size="11" fill="#f9a825">★★★★★ (5.0)</text>
+  <rect x="55" y="575" width="120" height="20" rx="10" fill="#ffebee"/>
+  <text x="70" y="589" font-family="Arial" font-size="9" fill="#c62828">✗ Non fumeur</text>
+  <rect x="195" y="575" width="130" height="20" rx="10" fill="#e8f5e9"/>
+  <text x="210" y="589" font-family="Arial" font-size="9" fill="#2e7d32">✓ Animaux acceptes</text>
+
+  <!-- Booking Section -->
+  <rect x="15" y="615" width="345" height="110" rx="10" fill="#f5f5f5" stroke="#ddd"/>
+  <text x="187" y="648" text-anchor="middle" font-family="Arial" font-size="22" fill="#2E7D32" font-weight="bold">24.00 €</text>
+  <text x="187" y="668" text-anchor="middle" font-family="Arial" font-size="10" fill="#777">/ place · Credits: 20.00 €</text>
+  <rect x="40" y="685" width="295" height="32" rx="16" fill="#2E7D32"/>
+  <text x="187" y="706" text-anchor="middle" font-family="Arial" font-size="12" fill="#fff">Participer</text>
+
+  <!-- Reviews -->
+  <rect x="15" y="740" width="345" height="95" rx="10" fill="#fff" stroke="#ddd"/>
+  <rect x="15" y="740" width="345" height="30" rx="10" fill="#2E7D32"/>
+  <text x="28" y="760" font-family="Arial" font-size="12" fill="#fff" font-weight="bold">Avis</text>
+  <text x="28" y="790" font-family="Arial" font-size="11" fill="#f9a825">★★★★★</text>
+  <text x="100" y="790" font-family="Arial" font-size="11" fill="#333" font-weight="bold">Emma</text>
+  <text x="28" y="810" font-family="Arial" font-size="9" fill="#555">Excellent trajet ! Tres confortable.</text>
+  <text x="28" y="825" font-family="Arial" font-size="9" fill="#999">Nice → Marseille · 18/02/2026</text>
+
+  <!-- Footer -->
+  <rect x="0" y="850" width="375" height="50" fill="#1a3a1a"/>
+  <text x="187" y="880" text-anchor="middle" font-family="Arial" font-size="9" fill="#777">© 2026 EcoRide</text>
+</svg>

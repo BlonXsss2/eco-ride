@@ -1,0 +1,61 @@
+# Docker Compose - Environnement de developpement EcoRide
+# Lance PHP + MySQL en local avec un seul commande
+
+version: '3.8'
+
+services:
+  # Serveur web PHP
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=ecoride
+      - DB_USER=ecoride_user
+      - DB_PASS=ecoride_pass
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Base de donnees MySQL
+  db:
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ecoride
+      MYSQL_USER: ecoride_user
+      MYSQL_PASSWORD: ecoride_pass
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # phpMyAdmin (optionnel, pour voir la BDD)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: ecoride_user
+      PMA_PASSWORD: ecoride_pass
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  mysql_data:

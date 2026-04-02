@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <title>Mockup Desktop - Page d'accueil EcoRide</title>
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="50%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#66BB6A"/>
+    </linearGradient>
+    <linearGradient id="navGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+    <linearGradient id="footerGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1f12"/>
+      <stop offset="100%" stop-color="#0a2e10"/>
+    </linearGradient>
+    <linearGradient id="btnGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#4CAF50"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#F1F8E9"/>
+  <text x="600" y="18" text-anchor="middle" font-family="Montserrat, Arial" font-size="11" fill="#2E7D32" font-weight="bold">MOCKUP DESKTOP — Page d'accueil EcoRide</text>
+
+  <!-- NAVBAR -->
+  <rect x="0" y="25" width="1200" height="70" fill="url(#navGrad)"/>
+  <text x="50" y="68" font-family="Montserrat, Arial" font-size="20" fill="#fff" font-weight="bold">🚗 EcoRide</text>
+  <text x="680" y="65" font-family="Open Sans, Arial" font-size="13" fill="rgba(255,255,255,0.9)">🏠 Accueil</text>
+  <text x="790" y="65" font-family="Open Sans, Arial" font-size="13" fill="rgba(255,255,255,0.9)">🚗 Covoiturages</text>
+  <text x="930" y="65" font-family="Open Sans, Arial" font-size="13" fill="rgba(255,255,255,0.9)">✉ Contact</text>
+  <text x="1020" y="65" font-family="Open Sans, Arial" font-size="13" fill="rgba(255,255,255,0.9)">🔑 Connexion</text>
+  <text x="1120" y="65" font-family="Open Sans, Arial" font-size="13" fill="rgba(255,255,255,0.9)">📝 Inscription</text>
+
+  <!-- HERO SECTION -->
+  <rect x="0" y="95" width="1200" height="310" fill="url(#heroGrad)"/>
+  <circle cx="1100" cy="100" r="250" fill="rgba(255,255,255,0.04)"/>
+  <circle cx="100" cy="350" r="180" fill="rgba(255,255,255,0.03)"/>
+
+  <text x="80" y="195" font-family="Montserrat, Arial" font-size="32" fill="#fff" font-weight="bold">Covoiturage ecologique</text>
+  <text x="80" y="235" font-family="Montserrat, Arial" font-size="32" fill="#fff" font-weight="bold">pour un avenir plus vert.</text>
+  <text x="80" y="270" font-family="Open Sans, Arial" font-size="14" fill="rgba(255,255,255,0.9)">Partagez vos trajets, reduisez les emissions de CO₂</text>
+  <text x="80" y="290" font-family="Open Sans, Arial" font-size="14" fill="rgba(255,255,255,0.9)">et economisez avec EcoRide.</text>
+  <rect x="80" y="310" width="130" height="40" rx="20" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+  <text x="110" y="335" font-family="Open Sans, Arial" font-size="13" fill="#fff">↓ Decouvrir</text>
+  <rect x="225" y="310" width="130" height="40" rx="20" fill="#fff"/>
+  <text x="255" y="335" font-family="Open Sans, Arial" font-size="13" fill="#2E7D32" font-weight="bold">S'inscrire</text>
+
+  <!-- Search Card -->
+  <rect x="620" y="150" width="510" height="220" rx="16" fill="#fff" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.1))"/>
+  <text x="820" y="185" text-anchor="middle" font-family="Montserrat, Arial" font-size="16" fill="#2E7D32" font-weight="bold">🔍 Trouver un trajet</text>
+  <text x="650" y="215" font-family="Open Sans, Arial" font-size="11" fill="#1B5E20" font-weight="bold">📍 Depart</text>
+  <rect x="650" y="222" width="140" height="38" rx="10" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+  <text x="665" y="246" font-family="Open Sans, Arial" font-size="11" fill="#aaa">ex. Paris</text>
+  <text x="810" y="215" font-family="Open Sans, Arial" font-size="11" fill="#1B5E20" font-weight="bold">📌 Arrivee</text>
+  <rect x="810" y="222" width="140" height="38" rx="10" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+  <text x="825" y="246" font-family="Open Sans, Arial" font-size="11" fill="#aaa">ex. Lyon</text>
+  <text x="970" y="215" font-family="Open Sans, Arial" font-size="11" fill="#1B5E20" font-weight="bold">📅 Date</text>
+  <rect x="970" y="222" width="140" height="38" rx="10" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+  <text x="985" y="246" font-family="Open Sans, Arial" font-size="11" fill="#aaa">jj/mm/aaaa</text>
+  <rect x="650" y="280" width="460" height="42" rx="21" fill="url(#btnGrad)" filter="drop-shadow(0 4px 15px rgba(46,125,50,0.3))"/>
+  <text x="830" y="307" text-anchor="middle" font-family="Open Sans, Arial" font-size="14" fill="#fff" font-weight="bold">🔍 Rechercher un trajet</text>
+
+  <!-- FEATURES -->
+  <rect x="50" y="425" width="340" height="140" rx="16" fill="#fff" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.08))"/>
+  <circle cx="220" cy="468" r="30" fill="#F1F8E9"/>
+  <text x="212" y="475" font-family="Arial" font-size="20" fill="#2E7D32">🌳</text>
+  <text x="220" y="510" text-anchor="middle" font-family="Montserrat, Arial" font-size="14" fill="#1B5E20" font-weight="bold">100% Ecologique</text>
+  <text x="220" y="530" text-anchor="middle" font-family="Open Sans, Arial" font-size="11" fill="#757575">Vehicules electriques et hybrides</text>
+  <text x="220" y="546" text-anchor="middle" font-family="Open Sans, Arial" font-size="11" fill="#757575">pour un impact minimal</text>
+
+  <rect x="430" y="425" width="340" height="140" rx="16" fill="#fff" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.08))"/>
+  <circle cx="600" cy="468" r="30" fill="#F1F8E9"/>
+  <text x="592" y="475" font-family="Arial" font-size="20" fill="#2E7D32">🛡️</text>
+  <text x="600" y="510" text-anchor="middle" font-family="Montserrat, Arial" font-size="14" fill="#1B5E20" font-weight="bold">Trajet Securise</text>
+  <text x="600" y="530" text-anchor="middle" font-family="Open Sans, Arial" font-size="11" fill="#757575">Systeme d'avis et notes pour</text>
+  <text x="600" y="546" text-anchor="middle" font-family="Open Sans, Arial" font-size="11" fill="#757575">des trajets en confiance</text>
+
+  <rect x="810" y="425" width="340" height="140" rx="16" fill="#fff" filter="drop-shadow(0 4px 16px rgba(0,0,0,0.08))"/>
+  <circle cx="980" cy="468" r="30" fill="#F1F8E9"/>
+  <text x="972" y="475" font-family="Arial" font-size="20" fill="#2E7D32">💰</text>
+  <text x="980" y="510" text-anchor="middle" font-family="Montserrat, Arial" font-size="14" fill="#1B5E20" font-weight="bold">Economique</text>
+  <text x="980" y="530" text-anchor="middle" font-family="Open Sans, Arial" font-size="11" fill="#757575">Systeme de credits simple</text>
+  <text x="980" y="546" text-anchor="middle" font-family="Open Sans, Arial" font-size="11" fill="#757575">et transparent</text>
+
+  <!-- POPULAR CARPOOLS -->
+  <text x="50" y="610" font-family="Montserrat, Arial" font-size="18" fill="#1B5E20" font-weight="bold">⭐ Covoiturages ecologiques populaires</text>
+  <text x="50" y="630" font-family="Open Sans, Arial" font-size="12" fill="#757575">Decouvrez les trajets les plus recherches</text>
+  <rect x="1040" y="610" width="110" height="30" rx="15" fill="none" stroke="#2E7D32" stroke-width="2"/>
+  <text x="1060" y="630" font-family="Open Sans, Arial" font-size="12" fill="#2E7D32" font-weight="bold">Voir tout</text>
+
+  <!-- Card 1 -->
+  <rect x="50" y="650" width="350" height="155" rx="16" fill="#fff" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+  <rect x="50" y="650" width="350" height="40" rx="16" fill="url(#btnGrad)"/>
+  <text x="70" y="675" font-family="Open Sans, Arial" font-size="12" fill="#fff" font-weight="bold">👤 Alice · Electrique</text>
+  <text x="330" y="675" font-family="Open Sans, Arial" font-size="10" fill="rgba(255,255,255,0.9)">⚡ Eco</text>
+  <text x="70" y="715" font-family="Montserrat, Arial" font-size="15" fill="#2E7D32" font-weight="bold">➜ Paris → Lyon</text>
+  <text x="70" y="738" font-family="Open Sans, Arial" font-size="11" fill="#757575">🕐 Demain · 08:30 · 3 places</text>
+  <text x="70" y="785" font-family="Montserrat, Arial" font-size="20" fill="#2E7D32" font-weight="bold">24 €</text>
+  <rect x="300" y="770" width="88" height="30" rx="15" fill="url(#btnGrad)"/>
+  <text x="316" y="790" font-family="Open Sans, Arial" font-size="11" fill="#fff" font-weight="bold">Rechercher</text>
+
+  <!-- Card 2 -->
+  <rect x="425" y="650" width="350" height="155" rx="16" fill="#fff" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+  <rect x="425" y="650" width="350" height="40" rx="16" fill="url(#btnGrad)"/>
+  <text x="445" y="675" font-family="Open Sans, Arial" font-size="12" fill="#fff" font-weight="bold">👤 Lucas · Hybride</text>
+  <text x="705" y="675" font-family="Open Sans, Arial" font-size="10" fill="rgba(255,255,255,0.9)">⚡ Eco</text>
+  <text x="445" y="715" font-family="Montserrat, Arial" font-size="15" fill="#2E7D32" font-weight="bold">➜ Marseille → Nice</text>
+  <text x="445" y="738" font-family="Open Sans, Arial" font-size="11" fill="#757575">🕐 Sam. · 09:00 · 2 places</text>
+  <text x="445" y="785" font-family="Montserrat, Arial" font-size="20" fill="#2E7D32" font-weight="bold">18 €</text>
+  <rect x="675" y="770" width="88" height="30" rx="15" fill="url(#btnGrad)"/>
+  <text x="691" y="790" font-family="Open Sans, Arial" font-size="11" fill="#fff" font-weight="bold">Rechercher</text>
+
+  <!-- Card 3 -->
+  <rect x="800" y="650" width="350" height="155" rx="16" fill="#fff" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+  <rect x="800" y="650" width="350" height="40" rx="16" fill="url(#btnGrad)"/>
+  <text x="820" y="675" font-family="Open Sans, Arial" font-size="12" fill="#fff" font-weight="bold">👤 Emma · Electrique</text>
+  <text x="1080" y="675" font-family="Open Sans, Arial" font-size="10" fill="rgba(255,255,255,0.9)">⚡ Eco</text>
+  <text x="820" y="715" font-family="Montserrat, Arial" font-size="15" fill="#2E7D32" font-weight="bold">➜ Toulouse → Bordeaux</text>
+  <text x="820" y="738" font-family="Open Sans, Arial" font-size="11" fill="#757575">🕐 Dim. · 17:15 · 1 place</text>
+  <text x="820" y="785" font-family="Montserrat, Arial" font-size="20" fill="#2E7D32" font-weight="bold">22 €</text>
+  <rect x="1050" y="770" width="88" height="30" rx="15" fill="url(#btnGrad)"/>
+  <text x="1066" y="790" font-family="Open Sans, Arial" font-size="11" fill="#fff" font-weight="bold">Rechercher</text>
+
+  <!-- FOOTER -->
+  <rect x="0" y="830" width="1200" height="70" fill="url(#footerGrad)"/>
+  <text x="50" y="865" font-family="Montserrat, Arial" font-size="14" fill="#8BC34A" font-weight="bold">🚗 EcoRide</text>
+  <text x="350" y="865" font-family="Open Sans, Arial" font-size="11" fill="rgba(255,255,255,0.6)">Accueil | Covoiturages | Contact | Mentions legales | Confidentialite</text>
+  <text x="950" y="865" font-family="Open Sans, Arial" font-size="11" fill="rgba(255,255,255,0.4)">© 2026 EcoRide. Tous droits reserves.</text>
+</svg>
