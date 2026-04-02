@@ -59,11 +59,6 @@ try {
     $carpoolsCount = (int)$pdo->query('SELECT COUNT(*) FROM carpools')->fetchColumn();
     logLine("carpools_count_before={$carpoolsCount}");
 
-    if ($carpoolsCount > 0) {
-        logLine('Carpools already present; skipping import.');
-        exit(0);
-    }
-
     // Make the minimum required referenced rows exist.
     // We insert explicit IDs to match the generated carpools file references:
     // - driver_id: up to 9
@@ -122,20 +117,70 @@ try {
            registration_date=VALUES(registration_date)"
     );
 
-    $insertStmts = loadCarpoolInserts(__DIR__ . '/../database/carpools_inserts.sql');
-    logLine('carpool_inserts_lines=' . count($insertStmts));
+    // Import the big generated file only if table is empty
+    $inserted = 0;
+    if ($carpoolsCount === 0) {
+        $insertStmts = loadCarpoolInserts(__DIR__ . '/../database/carpools_inserts.sql');
+        logLine('carpool_inserts_lines=' . count($insertStmts));
 
-    $ok = 0;
-    foreach ($insertStmts as $sql) {
-        $pdo->exec($sql);
-        $ok++;
+        foreach ($insertStmts as $sql) {
+            $pdo->exec($sql);
+            $inserted++;
+        }
+    }
+
+    // Always ensure there are some FUTURE carpools for common routes,
+    // otherwise searches can legitimately return empty.
+    $ensureRoutes = [
+        ['Paris', 'Lyon', 24.00, 4, 3, 1],
+        ['Marseille', 'Nice', 18.00, 4, 2, 1],
+    ];
+
+    $countStmt = $pdo->prepare(
+        'SELECT COUNT(*) FROM carpools
+         WHERE from_city = :from_city
+           AND to_city = :to_city
+           AND seats_available > 0
+           AND departure_datetime >= NOW()'
+    );
+    $insertStmt = $pdo->prepare(
+        'INSERT INTO carpools (driver_id, vehicle_id, from_city, to_city, departure_datetime, price, total_seats, seats_available, is_eco)
+         VALUES (:driver_id, :vehicle_id, :from_city, :to_city, :departure_datetime, :price, :total_seats, :seats_available, :is_eco)'
+    );
+
+    foreach ($ensureRoutes as [$from, $to, $price, $totalSeats, $seatsAvailable, $isEco]) {
+        $countStmt->execute([':from_city' => $from, ':to_city' => $to]);
+        $existingFuture = (int)$countStmt->fetchColumn();
+        if ($existingFuture > 0) {
+            continue;
+        }
+
+        // Add a few rides in the next days.
+        for ($i = 1; $i <= 5; $i++) {
+            $dt = (new DateTimeImmutable('now', new DateTimeZone('UTC')))
+                ->modify("+{$i} day")
+                ->setTime(8 + $i, 0);
+
+            $insertStmt->execute([
+                ':driver_id' => ($from === 'Paris' ? 3 : 4),
+                ':vehicle_id' => ($from === 'Paris' ? 1 : 2),
+                ':from_city' => $from,
+                ':to_city' => $to,
+                ':departure_datetime' => $dt->format('Y-m-d H:i:s'),
+                ':price' => $price,
+                ':total_seats' => $totalSeats,
+                ':seats_available' => $seatsAvailable,
+                ':is_eco' => $isEco,
+            ]);
+            $inserted++;
+        }
     }
 
     $pdo->exec('SET FOREIGN_KEY_CHECKS=1');
     $pdo->commit();
 
     $carpoolsCountAfter = (int)$pdo->query('SELECT COUNT(*) FROM carpools')->fetchColumn();
-    logLine("inserted={$ok}");
+    logLine("inserted={$inserted}");
     logLine("carpools_count_after={$carpoolsCountAfter}");
 } catch (Throwable $e) {
     if (isset($pdo) && $pdo instanceof PDO && $pdo->inTransaction()) {
