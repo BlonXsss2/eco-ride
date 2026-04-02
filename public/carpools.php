@@ -82,7 +82,7 @@ $filters = $hasSearch ? ($searchParams['filters'] ?? []) : [];
             </div>
         <?php endif; ?>
 
-        <section class="carpool-section py-5" style="margin-top: 100px;">
+        <section class="carpool-section py-5">
             <div class="container">
 
                 <?php if (!$hasSearch): ?>

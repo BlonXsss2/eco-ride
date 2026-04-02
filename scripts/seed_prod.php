@@ -1,100 +1,90 @@
 <?php
-declare(strict_types=1);
-
 require_once __DIR__ . '/../src/config/database.php';
 
-function logLine(string $msg): void
-{
+// petit script pour seed la BDD sur Fly
+// (utile si la base est vide et qu'on veut tester vite)
+
+function logLine($msg) {
     echo $msg . PHP_EOL;
 }
 
-function envOrFail(string $key): string
-{
+function envVal($key) {
     $v = getenv($key);
-    if ($v === false || trim($v) === '') {
-        throw new RuntimeException("Missing env var: {$key}");
-    }
-    return (string)$v;
+    if ($v === false || trim($v) === '') return null;
+    return $v;
 }
 
-function loadCarpoolInserts(string $path): array
-{
-    if (!is_file($path)) {
-        throw new RuntimeException("File not found: {$path}");
-    }
+function loadInserts($path) {
+    if (!file_exists($path)) return [];
+    $lines = file($path, FILE_IGNORE_NEW_LINES);
+    if (!$lines) return [];
 
-    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    if ($lines === false) {
-        throw new RuntimeException("Unable to read: {$path}");
-    }
-
-    $stmts = [];
+    $sqls = [];
     foreach ($lines as $line) {
         $line = trim($line);
-        if ($line === '' || str_starts_with($line, '--')) {
-            continue;
-        }
-        // generated file is 1 INSERT per line, ending with ;
-        $stmts[] = $line;
+        if ($line === '') continue;
+        if (substr($line, 0, 2) === '--') continue;
+        $sqls[] = $line; // 1 INSERT par ligne
     }
-    return $stmts;
+    return $sqls;
 }
 
-try {
-    // Ensure env exists (also acts as quick debug output)
-    $host = envOrFail('DB_HOST');
-    $port = envOrFail('DB_PORT');
-    $name = envOrFail('DB_NAME');
-    $user = envOrFail('DB_USER');
-    envOrFail('DB_PASS');
+$pdo = null;
 
-    logLine("DB_HOST={$host}");
-    logLine("DB_PORT={$port}");
-    logLine("DB_NAME={$name}");
-    logLine("DB_USER={$user}");
+try {
+    // juste pour etre sur qu'on a la config
+    $host = envVal('DB_HOST');
+    $port = envVal('DB_PORT');
+    $name = envVal('DB_NAME');
+    $user = envVal('DB_USER');
+    $pass = envVal('DB_PASS');
+
+    logLine('DB_HOST=' . ($host ?: '(non defini)'));
+    logLine('DB_PORT=' . ($port ?: '(non defini)'));
+    logLine('DB_NAME=' . ($name ?: '(non defini)'));
+    logLine('DB_USER=' . ($user ?: '(non defini)'));
 
     $pdo = Database::getConnection();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $carpoolsCount = (int)$pdo->query('SELECT COUNT(*) FROM carpools')->fetchColumn();
-    logLine("carpools_count_before={$carpoolsCount}");
+    $before = (int)$pdo->query('SELECT COUNT(*) FROM carpools')->fetchColumn();
+    logLine('carpools_count_before=' . $before);
 
-    // Make the minimum required referenced rows exist.
-    // We insert explicit IDs to match the generated carpools file references:
-    // - driver_id: up to 9
-    // - vehicle_id: up to 8
-    //
-    // Use ON DUPLICATE KEY UPDATE to be idempotent.
-    $passwordHash = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; // "password"
+    // hash pour "password"
+    $pwd = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+
+    $inserted = 0;
 
     $pdo->beginTransaction();
     $pdo->exec('SET FOREIGN_KEY_CHECKS=0');
 
+    // users minimum pour les FK
     $pdo->exec(
         "INSERT INTO users (id, email, password, pseudo, role, role_selection, smoking_allowed, pets_allowed, credits, suspended)
          VALUES
-         (1,'admin@ecoride.com',    '{$passwordHash}','Admin','admin',NULL,0,0,100.00,0),
-         (2,'emp@ecoride.com',      '{$passwordHash}','Employee','employee',NULL,0,0,50.00,0),
-         (3,'alice@example.com',    '{$passwordHash}','Alice','user','driver',0,1,20.00,0),
-         (4,'lucas@example.com',    '{$passwordHash}','Lucas','user','both',0,0,20.00,0),
-         (5,'emma@example.com',     '{$passwordHash}','Emma','user','passenger',1,1,20.00,0),
-         (6,'marc@example.com',     '{$passwordHash}','Marc','user','driver',0,0,35.00,0),
-         (7,'sophie@example.com',   '{$passwordHash}','Sophie','user','passenger',0,1,15.00,0),
-         (8,'julien@example.com',   '{$passwordHash}','Julien','user','both',1,0,45.00,0),
-         (9,'marie@example.com',    '{$passwordHash}','Marie','user','driver',0,1,25.00,0),
-         (10,'thomas@example.com',  '{$passwordHash}','Thomas','user','passenger',0,0,20.00,0),
-         (11,'emp2@ecoride.com',    '{$passwordHash}','Employee2','employee',NULL,0,0,50.00,0)
+         (1,'admin@ecoride.com',    '{$pwd}','Admin','admin',NULL,0,0,100.00,0),
+         (2,'emp@ecoride.com',      '{$pwd}','Employee','employee',NULL,0,0,50.00,0),
+         (3,'alice@example.com',    '{$pwd}','Alice','user','driver',0,1,20.00,0),
+         (4,'lucas@example.com',    '{$pwd}','Lucas','user','both',0,0,20.00,0),
+         (5,'emma@example.com',     '{$pwd}','Emma','user','passenger',1,1,20.00,0),
+         (6,'marc@example.com',     '{$pwd}','Marc','user','driver',0,0,35.00,0),
+         (7,'sophie@example.com',   '{$pwd}','Sophie','user','passenger',0,1,15.00,0),
+         (8,'julien@example.com',   '{$pwd}','Julien','user','both',1,0,45.00,0),
+         (9,'marie@example.com',    '{$pwd}','Marie','user','driver',0,1,25.00,0),
+         (10,'thomas@example.com',  '{$pwd}','Thomas','user','passenger',0,0,20.00,0),
+         (11,'emp2@ecoride.com',    '{$pwd}','Employee2','employee',NULL,0,0,50.00,0)
          ON DUPLICATE KEY UPDATE
-           password=VALUES(password),
-           pseudo=VALUES(pseudo),
-           role=VALUES(role),
-           role_selection=VALUES(role_selection),
-           smoking_allowed=VALUES(smoking_allowed),
-           pets_allowed=VALUES(pets_allowed),
-           credits=VALUES(credits),
-           suspended=VALUES(suspended)"
+            password=VALUES(password),
+            pseudo=VALUES(pseudo),
+            role=VALUES(role),
+            role_selection=VALUES(role_selection),
+            smoking_allowed=VALUES(smoking_allowed),
+            pets_allowed=VALUES(pets_allowed),
+            credits=VALUES(credits),
+            suspended=VALUES(suspended)"
     );
 
+    // vehicles minimum pour les FK
     $pdo->exec(
         "INSERT INTO vehicles (id, user_id, brand, model, energy_type, seats, color, license_plate, registration_date)
          VALUES
@@ -107,70 +97,63 @@ try {
          (7, 6,'Citroen','C3','diesel',4,'White','YZ-901-AB','2018-04-12'),
          (8, 8,'Volkswagen','Golf','petrol',4,'Blue','CD-234-EF','2020-11-30')
          ON DUPLICATE KEY UPDATE
-           user_id=VALUES(user_id),
-           brand=VALUES(brand),
-           model=VALUES(model),
-           energy_type=VALUES(energy_type),
-           seats=VALUES(seats),
-           color=VALUES(color),
-           license_plate=VALUES(license_plate),
-           registration_date=VALUES(registration_date)"
+            user_id=VALUES(user_id),
+            brand=VALUES(brand),
+            model=VALUES(model),
+            energy_type=VALUES(energy_type),
+            seats=VALUES(seats),
+            color=VALUES(color),
+            license_plate=VALUES(license_plate),
+            registration_date=VALUES(registration_date)"
     );
 
-    // Import the big generated file only if table is empty
-    $inserted = 0;
-    if ($carpoolsCount === 0) {
-        $insertStmts = loadCarpoolInserts(__DIR__ . '/../database/carpools_inserts.sql');
-        logLine('carpool_inserts_lines=' . count($insertStmts));
-
-        foreach ($insertStmts as $sql) {
+    // import du gros fichier seulement si table vide
+    if ($before === 0) {
+        $sqls = loadInserts(__DIR__ . '/../database/carpools_inserts.sql');
+        logLine('carpool_inserts_lines=' . count($sqls));
+        foreach ($sqls as $sql) {
             $pdo->exec($sql);
             $inserted++;
         }
     }
 
-    // Always ensure there are some FUTURE carpools for common routes,
-    // otherwise searches can legitimately return empty.
-    $ensureRoutes = [
-        ['Paris', 'Lyon', 24.00, 4, 3, 1],
-        ['Marseille', 'Nice', 18.00, 4, 2, 1],
+    // on ajoute quelques trajets FUTURS "classiques" si y'en a pas
+    $routes = [
+        ['from' => 'Paris',     'to' => 'Lyon',      'price' => 24.00, 'seats' => 4, 'free' => 3, 'eco' => 1, 'driver' => 3, 'vehicle' => 1],
+        ['from' => 'Marseille', 'to' => 'Nice',      'price' => 18.00, 'seats' => 4, 'free' => 2, 'eco' => 1, 'driver' => 4, 'vehicle' => 2],
     ];
 
-    $countStmt = $pdo->prepare(
-        'SELECT COUNT(*) FROM carpools
-         WHERE from_city = :from_city
-           AND to_city = :to_city
+    $check = $pdo->prepare(
+        "SELECT COUNT(*) FROM carpools
+         WHERE from_city = :from
+           AND to_city = :to
            AND seats_available > 0
-           AND departure_datetime >= NOW()'
+           AND departure_datetime >= NOW()"
     );
-    $insertStmt = $pdo->prepare(
-        'INSERT INTO carpools (driver_id, vehicle_id, from_city, to_city, departure_datetime, price, total_seats, seats_available, is_eco)
-         VALUES (:driver_id, :vehicle_id, :from_city, :to_city, :departure_datetime, :price, :total_seats, :seats_available, :is_eco)'
+    $add = $pdo->prepare(
+        "INSERT INTO carpools (driver_id, vehicle_id, from_city, to_city, departure_datetime, price, total_seats, seats_available, is_eco)
+         VALUES (:driver_id, :vehicle_id, :from, :to, :dt, :price, :seats, :free, :eco)"
     );
 
-    foreach ($ensureRoutes as [$from, $to, $price, $totalSeats, $seatsAvailable, $isEco]) {
-        $countStmt->execute([':from_city' => $from, ':to_city' => $to]);
-        $existingFuture = (int)$countStmt->fetchColumn();
-        if ($existingFuture > 0) {
-            continue;
-        }
+    foreach ($routes as $r) {
+        $check->execute([':from' => $r['from'], ':to' => $r['to']]);
+        $ok = (int)$check->fetchColumn();
+        if ($ok > 0) continue;
 
-        // Add a few rides in the next days.
         for ($i = 1; $i <= 5; $i++) {
-            $dt = (new DateTimeImmutable('now', new DateTimeZone('UTC')))
-                ->modify("+{$i} day")
-                ->setTime(8 + $i, 0);
+            // date simple (UTC), +1/+2... jours
+            $dt = gmdate('Y-m-d H:i:s', time() + ($i * 86400) + (3600 * (8 + $i)));
 
-            $insertStmt->execute([
-                ':driver_id' => ($from === 'Paris' ? 3 : 4),
-                ':vehicle_id' => ($from === 'Paris' ? 1 : 2),
-                ':from_city' => $from,
-                ':to_city' => $to,
-                ':departure_datetime' => $dt->format('Y-m-d H:i:s'),
-                ':price' => $price,
-                ':total_seats' => $totalSeats,
-                ':seats_available' => $seatsAvailable,
-                ':is_eco' => $isEco,
+            $add->execute([
+                ':driver_id' => $r['driver'],
+                ':vehicle_id' => $r['vehicle'],
+                ':from' => $r['from'],
+                ':to' => $r['to'],
+                ':dt' => $dt,
+                ':price' => $r['price'],
+                ':seats' => $r['seats'],
+                ':free' => $r['free'],
+                ':eco' => $r['eco'],
             ]);
             $inserted++;
         }
@@ -179,13 +162,11 @@ try {
     $pdo->exec('SET FOREIGN_KEY_CHECKS=1');
     $pdo->commit();
 
-    $carpoolsCountAfter = (int)$pdo->query('SELECT COUNT(*) FROM carpools')->fetchColumn();
-    logLine("inserted={$inserted}");
-    logLine("carpools_count_after={$carpoolsCountAfter}");
-} catch (Throwable $e) {
-    if (isset($pdo) && $pdo instanceof PDO && $pdo->inTransaction()) {
-        $pdo->rollBack();
-    }
+    $after = (int)$pdo->query('SELECT COUNT(*) FROM carpools')->fetchColumn();
+    logLine('inserted=' . $inserted);
+    logLine('carpools_count_after=' . $after);
+} catch (Exception $e) {
+    if ($pdo && $pdo->inTransaction()) $pdo->rollBack();
     logLine('ERROR: ' . $e->getMessage());
     exit(1);
 }
