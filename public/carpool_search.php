@@ -3,6 +3,7 @@
 
 require_once __DIR__ . '/../src/config/session.php';
 require_once __DIR__ . '/../src/models/Carpool.php';
+require_once __DIR__ . '/../src/nosql/SearchHistory.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     header('Location: index.php');
@@ -45,6 +46,14 @@ if (!empty($_GET['min_rating'])) {
 
 $carpoolModel = new Carpool();
 $results = $carpoolModel->searchCarpools($from, $to, $date ?: null, $filters);
+
+// on garde un petit historique (fichier json)
+try {
+    $history = new SearchHistory();
+    $history->add($from, $to, $date, $filters);
+} catch (Exception $e) {
+    // tant pis, on bloque pas la recherche
+}
 
 // on stocke en session pour la page de resultats
 $_SESSION['search_results'] = $results;
