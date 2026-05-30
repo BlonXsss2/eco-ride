@@ -47,6 +47,14 @@ if (!empty($_GET['min_rating'])) {
 $carpoolModel = new Carpool();
 $results = $carpoolModel->searchCarpools($from, $to, $date ?: null, $filters);
 
+// si rien trouve, on tente de seed la BDD puis on relance
+if (empty($results)) {
+    require_once __DIR__ . '/../scripts/seed_prod.php';
+    if (function_exists('runSeed') && runSeed()) {
+        $results = $carpoolModel->searchCarpools($from, $to, $date ?: null, $filters);
+    }
+}
+
 // on garde un petit historique (fichier json)
 try {
     $history = new SearchHistory();
